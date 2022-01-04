@@ -32,9 +32,9 @@ OneButton::OneButton()
  * Initialize the OneButton library.
  * @param pin The pin to be used for input from a momentary button.
  * @param activeLow Set to true when the input level is LOW when the button is pressed, Default is true.
- * @param pullupActive Activate the internal pullup when available. Default is true.
+ * @param pinMode Which mode to use
  */
-OneButton::OneButton(const int pin, const boolean activeLow, const bool pullupActive)
+OneButton::OneButton(const int pin, const boolean activeLow, const int mode)
 {
   // OneButton();
   _pin = pin;
@@ -48,13 +48,7 @@ OneButton::OneButton(const int pin, const boolean activeLow, const bool pullupAc
     _buttonPressed = HIGH;
   } // if
 
-  if (pullupActive) {
-    // use the given pin as input and activate internal PULLUP resistor.
-    pinMode(pin, INPUT_PULLUP);
-  } else {
-    // use the given pin as input
-    pinMode(pin, INPUT);
-  } // if
+  pinMode(pin, mode)
 } // OneButton
 
 
