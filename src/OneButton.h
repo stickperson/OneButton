@@ -43,10 +43,10 @@ public:
   /**
    * Initialize the OneButton library.
    * @param pin The pin to be used for input from a momentary button.
+   * @param pinMode Which mode to use
    * @param activeLow Set to true when the input level is LOW when the button is pressed, Default is true.
-   * @param pullupActive Activate the internal pullup when available. Default is true.
    */
-  OneButton(const int pin, const boolean activeLow = true, const bool pullupActive = true);
+  OneButton(const int pin, const int mode, const boolean activeLow = true);
 
   // ----- Set runtime parameters -----
 
